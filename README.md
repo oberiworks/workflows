@@ -48,6 +48,6 @@ Usage:
 
 ```yaml
 jobs:
-  call-validate-code:
+  call-validate-commits:
     uses: oberiworks/workflows/.github/workflows/validate-commits.yml@main
 ```
