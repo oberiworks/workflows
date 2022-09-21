@@ -1,0 +1,16 @@
+name: "Dockerfile Lint Action"
+description: "Action that runs squ1d123/dockerfilelint linting tool"
+author: "Tim Preece"
+inputs:
+  dockerfile:
+    required: false
+    description: "The path to the Dockerfile to lint"
+    default: "Dockerfile"
+runs:
+  using: "docker"
+  image: "squ1d123/dockerfilelint:1.4.0"
+  args:
+    - ${{ inputs.dockerfile }}
+branding:
+  icon: "aperture"
+  color: "red"

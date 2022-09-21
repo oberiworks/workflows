@@ -1,0 +1,15 @@
+name: Validate
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-commits:
+    uses: oberiworks/workflows/.github/workflows/validate_commits.yml@main
+
+  lint:
+    uses: oberiworks/workflows/.github/workflows/validate_code.yml@main
+    with:
+      workflowlint: true
