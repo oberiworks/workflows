@@ -52,7 +52,7 @@ jobs:
       # Dockerfile
       - name: Lint Dockerfile
         if: ${{ inputs.dockerlint == true }}
-        uses: ./.github/actions/dockerfile-lint
+        uses: hadolint/hadolint-action@v3
         with:
           dockerfile: ${{ inputs.dockerfile }}
           # dockerfile: ${{ format('{0}/{1}', github.workspace, inputs.dockerfile) }}
