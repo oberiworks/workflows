@@ -9,11 +9,11 @@ jobs:
     name: Enforce conventional commits
     steps:
       - name: Source checkout
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
       - name: Verify with commitlint
-        uses: wagoid/commitlint-github-action@v4.1.9
+        uses: wagoid/commitlint-github-action@v5
         with:
           configFile: ".github/configs/commitlintrc.yml"

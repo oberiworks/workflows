@@ -44,14 +44,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
+
         with:
           fetch-depth: 0
 
       # Dockerfile
       - name: Lint Dockerfile
         if: ${{ inputs.dockerlint == true }}
-        uses: ./.github/actions/dockerfile-lint
+        uses: hadolint/hadolint-action@v3.0.0
         with:
           dockerfile: ${{ inputs.dockerfile }}
           # dockerfile: ${{ format('{0}/{1}', github.workspace, inputs.dockerfile) }}
@@ -59,7 +60,7 @@ jobs:
       # Markdown
       - name: Lint Markdown
         if: ${{ inputs.markdownlint }}
-        uses: nosborn/github-action-markdown-cli@v2.0.0
+        uses: nosborn/github-action-markdown-cli@v3.2.0
         with:
           files: .
 
@@ -78,11 +79,11 @@ jobs:
       # Workflows
       - name: Lint workflows
         if: ${{ inputs.workflowlint == true }}
-        uses: cschleiden/actions-linter@v1
+        uses: rethab/actions-lint@v1
         with:
-          workflows: '[".github/workflows/*.yaml"]'
+          files: '[".github/workflows/*.yaml"]'
 
       # Yaml
       - name: Lint yaml files
         if: ${{ inputs.yamllint == true }}
-        uses: ibiqlik/action-yamllint@v3
+        uses: ibiqlik/action-yamllint@v3.1.1
