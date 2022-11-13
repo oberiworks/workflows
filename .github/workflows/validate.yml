@@ -7,9 +7,9 @@ on:
 
 jobs:
   validate-commits:
-    uses: oberiworks/workflows/.github/workflows/validate_commits.yml@main
+    uses: oberiworks/workflows/.github/workflows/validate-commits.yml@main
 
   lint:
-    uses: oberiworks/workflows/.github/workflows/validate_code.yml@main
+    uses: oberiworks/workflows/.github/workflows/validate-code.yml@main
     with:
       workflowlint: true
