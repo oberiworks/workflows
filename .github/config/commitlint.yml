@@ -6,6 +6,7 @@ rules:
   subject-case: [0, "always", "sentence-case"]
   header-full-stop: [0, "never", "."]
   header-max-length: [1, "always", 200]
+  body-max-line-length: [1, "always", 200]
   type-enum:
     - 2
     - always
