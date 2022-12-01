@@ -81,7 +81,7 @@ jobs:
         if: ${{ inputs.workflowlint == true }}
         uses: rethab/actions-lint@v1
         with:
-          files: '[".github/workflows/*.yaml"]'
+          files: '[".github/workflows/*.yml"]'
 
       # Yaml
       - name: Lint yaml files
