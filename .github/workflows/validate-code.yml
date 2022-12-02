@@ -79,9 +79,9 @@ jobs:
       # Workflows
       - name: Lint workflows
         if: ${{ inputs.workflowlint == true }}
-        uses: rethab/actions-lint@v1
+        uses: cfy9/action-linting@v0.0.1
         with:
-          files: '[".github/workflows/*.yml"]'
+          arguments: "-color"
 
       # Yaml
       - name: Lint yaml files

@@ -2,14 +2,16 @@ name: Validate
 
 on:
   pull_request:
-    branches:
-      - main
+    types:
+      - opened
+      - reopened
+      - synchronize
 
 jobs:
   validate-commits:
-    uses: oberiworks/workflows/.github/workflows/validate-commits.yml@main
+    uses: ./.github/workflows/validate-commits.yml
 
   lint:
-    uses: oberiworks/workflows/.github/workflows/validate-code.yml@main
+    uses: ./.github/workflows/validate-code.yml
     with:
       workflowlint: true
