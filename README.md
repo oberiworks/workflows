@@ -1,6 +1,31 @@
-# A collection of re-usable workflows
+# Workflows
 
-## workflows
+## A collection of re-usable workflows
+
+![Pre-Commit-Enabled]
+![Validate]
+
+This repository is pre-commit enabled:
+
+1) install pre-commit
+2) run pre-commit install
+
+---
+
+### workflows
+
+> detect-secrets
+
+Scans all files for potential secrets using the pre-commit detect-secrets hook.
+To use this workflow a repository must have a .secrets.baseline file in the root.
+
+Usage:
+
+```yaml
+jobs:
+  call-detect-secrets:
+    uses: oberiworks/workflows/.github/workflows/detect-secrets.yml@main
+```
 
 > validate-code
 
@@ -51,3 +76,6 @@ jobs:
   call-validate-commits:
     uses: oberiworks/workflows/.github/workflows/validate-commits.yml@main
 ```
+
+[Pre-Commit-Enabled]: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+[Validate]: https://github.com/oberiworks/workflows/workflows/Validate/badge.svg
