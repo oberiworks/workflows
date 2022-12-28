@@ -79,7 +79,7 @@ jobs:
       # Workflows
       - name: Lint workflows
         if: ${{ inputs.workflowlint == true }}
-        uses: cfy9/action-linting@v0.0.1
+        uses: cfy9/action-linting@v0.0.3
         with:
           arguments: "-color"
 
