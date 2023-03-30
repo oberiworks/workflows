@@ -60,7 +60,7 @@ jobs:
       # Markdown
       - name: Lint Markdown
         if: ${{ inputs.markdownlint }}
-        uses: nosborn/github-action-markdown-cli@v3.2.0
+        uses: nosborn/github-action-markdown-cli@v3.3.0
         with:
           files: .
 
